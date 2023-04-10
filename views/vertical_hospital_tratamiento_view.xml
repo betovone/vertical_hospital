@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo>
+
+
+  <!-- FORM -->
+   <record id="vertical_hospital_tratamiento_view_form" model="ir.ui.view">
+        <field name="name">vertical_hospital_tratamiento_form</field>
+        <field name="model">vertical_hospital.tratamiento</field>
+        <field name="arch" type="xml">
+            <form string="tratamiento">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="id" invisible="1" />
+                        <field name="nombre" />
+                        <field name="medico_tratante" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+  <!-- LISTA (VISTA TREE)-->
+  <record id="vertical_hospital_tratamiento_view_tree" model="ir.ui.view">
+      <field name="name">vertical_hospital_tratamiento_tree</field>
+      <field name="model">vertical_hospital.tratamiento</field>
+      <field name="arch" type="xml">
+          <tree default_order="name desc">
+              <field name="name"/>
+              <field name="nombre"/>
+              <field name="medico_tratante" />
+          </tree>
+      </field>
+  </record>
+
+
+  <!-- ACCION -->
+  <record id="vertical_hospital_tratamiento_action" model="ir.actions.act_window">
+      <field name="name">tratamientos</field>
+      <field name="res_model">vertical_hospital.tratamiento</field>
+      <field name="view_mode">tree,form</field>
+  </record>
+
+
+</odoo>
+

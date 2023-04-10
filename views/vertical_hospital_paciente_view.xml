@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<odoo>
+
+
+  <!-- FORM -->
+   <record id="vertical_hospital_paciente_view_form" model="ir.ui.view">
+        <field name="name">vertical_hospital_paciente_form</field>
+        <field name="model">vertical_hospital.paciente</field>
+        <field name="arch" type="xml">
+            <form string="Paciente">
+                <header>
+                    <field name="state" widget="statusbar"
+                               statusbar_visible="borrador,alta,baja" 
+                               options="{'clickable': '1'}"  />
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="id" invisible="1" />
+                            <field name="nombre_apellido" />
+                            <field name="dni" />
+                        </group>
+                        <group>
+                            <field  name="tratamientos_realizados" 
+                                    widget="many2many_tags" 
+                                    options="{'no_quick_create' : True, 'no_create' : True}" />
+                        </group>
+                    </group>
+                </sheet>
+                 <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+  <!-- LISTA (VISTA TREE)-->
+  <record id="vertical_hospital_paciente_view_tree" model="ir.ui.view">
+      <field name="name">vertical_hospital_paciente_tree</field>
+      <field name="model">vertical_hospital.paciente</field>
+      <field name="arch" type="xml">
+          <tree default_order="name desc" decoration-success="state=='alta'" decoration-muted="state=='borrador'" decoration-danger="state=='baja'">
+              <field name="name"/>
+              <field name="nombre_apellido"/>
+              <field name="dni" />
+              <field name="state" />
+          </tree>
+      </field>
+  </record>
+
+
+  <!-- ACCION -->
+  <record id="vertical_hospital_paciente_action" model="ir.actions.act_window">
+      <field name="name">Pacientes</field>
+      <field name="res_model">vertical_hospital.paciente</field>
+      <field name="view_mode">tree,form</field>
+  </record>
+
+
+</odoo>
+

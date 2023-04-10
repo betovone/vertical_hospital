@@ -1,0 +1,7 @@
+Para que se visualice el reporte de impresion por ejemplo hay que hacer esto
+
+1ro- crear archivo reports/estate_betovone_report.xml y estate_betovone_template.xml
+2do- ir al admin de odoo, a settings->technical->Actions->Reports
+3ro- entrar al reporte creado, en mi caso "Estate Property"
+4to- clic en "Add in the Print menu"
+5to- refrezcar pantalla e ir al modulo "estate" y aparecerá el botón "print" cdo estemos dentro de una propiedad o si seleccionamos mas de una en la lista

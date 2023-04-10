@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <menuitem id="vertical_hospital_root_menu" name="Vertical Hospital" 
+                sequence="1"
+                web_icon="vertical_hospital,static/description/icon.png" />
+
+        <!--Menu Pacientes -->
+        <menuitem id="vertical_hospital_paciente_menu" name="Pacientes" 
+                parent="vertical_hospital_root_menu" sequence="10"
+                action="vertical_hospital_paciente_action" >
+        </menuitem>
+
+        <!-- Menú Tratamientos -->
+        <menuitem id="vertical_hospital_tratamiento_menu" name="Tratamientos" 
+                parent="vertical_hospital_root_menu" sequence="10"
+                action="vertical_hospital_tratamiento_action" >
+        </menuitem>
+</odoo>
